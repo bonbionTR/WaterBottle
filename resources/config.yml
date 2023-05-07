@@ -1,0 +1,6 @@
+messages:
+  filled_bottle: "§9You filled a water bottle!"
+  full_inventory: "§cYour inventory is full, you can't fill a water bottle!"
+  
+items:
+  potion_name: "§r§bWater Bottle"
