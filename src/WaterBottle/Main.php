@@ -29,6 +29,10 @@ class Main extends PluginBase implements Listener {
         $item = $event->getItem();
         $block = $event->getBlock();
 
+        if($item->getId() == ItemIds::BUCKET) {
+            return;
+        }
+
         if($item->getId() == ItemIds::GLASS_BOTTLE && $block->getId() == ItemIds::STILL_WATER or $block->getId() == VanillaBlocks::WATER()->getId()) {
             if($player->getInventory()->canAddItem(ItemFactory::getInstance()->get(ItemIds::POTION, 0, 1))) {
                 $item = ItemFactory::getInstance()->get(ItemIds::POTION, 0, 1);
