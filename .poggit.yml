@@ -1,8 +1,0 @@
---- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/bonbionTR/WaterBottle
-branches:
-  - PM4
-projects:
-  WaterBottle:
-    icon: "icon.png"
-    libs: ""
-...
