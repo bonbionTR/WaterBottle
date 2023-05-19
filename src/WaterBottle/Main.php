@@ -41,7 +41,7 @@ class Main extends PluginBase implements Listener {
                 $gety = round($player->getPosition()->getY());
                 $getz = round($player->getPosition()->getZ());
                 $vect = new Vector3($getx, $gety, $getz);
-                $player->sendTitle($this->config->getNested("messages.filled_bottle"));
+                $player->sendPopup($this->config->getNested("messages.filled_bottle"));
                 $player->getWorld()->addSound($player->getPosition(), new XpCollectSound(), [$player]);
                 
                 $player->getInventory()->removeItem(ItemFactory::getInstance()->get(ItemIds::GLASS_BOTTLE, 0, 1));
