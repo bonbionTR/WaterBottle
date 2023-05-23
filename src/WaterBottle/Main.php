@@ -27,11 +27,14 @@ class Main extends PluginBase implements Listener {
     public function onPlayerInteract(PlayerInteractEvent $event) {
         $player = $event->getPlayer();
         $item = $event->getItem();
-        $block = $event->getBlock();
-        if($item->getId() == ItemIds::BUCKET) {
+        $block = $event->getBlock(); 
+        
+        if ($item->getId() !== ItemIds::GLASS_BOTTLE) {
             return;
         }
-        if($item->getId() == ItemIds::GLASS_BOTTLE && $block->getId() == ItemIds::STILL_WATER or $block->getId() == VanillaBlocks::WATER()->getId()) {
+
+        }
+        if ($block->getId() === ItemIds::STILL_WATER || $block->getId() === VanillaBlocks::WATER()->getId()) {
             if($player->getInventory()->canAddItem(ItemFactory::getInstance()->get(ItemIds::POTION, 0, 1))) {
                 $item = ItemFactory::getInstance()->get(ItemIds::POTION, 0, 1);
                 $item->setCustomName($this->config->getNested("items.potion_name"));
