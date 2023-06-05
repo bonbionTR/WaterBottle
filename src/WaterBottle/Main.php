@@ -13,6 +13,7 @@ use pocketmine\plugin\PluginBase;
 use pocketmine\utils\Config;
 use pocketmine\math\Vector3;
 use pocketmine\world\sound\XpCollectSound;
+use WaterBottle\utils\PluginUtils;
 
 class Main extends PluginBase implements Listener {
 
@@ -45,7 +46,7 @@ class Main extends PluginBase implements Listener {
                 $getz = round($player->getPosition()->getZ());
                 $vect = new Vector3($getx, $gety, $getz);
                 $player->sendPopup($this->config->getNested("messages.filled_bottle"));
-                $player->getWorld()->addSound($player->getPosition(), new XpCollectSound(), [$player]);
+				PluginUtils::PlaySound($player, "cauldron.takepotion", 1, 1);
                 
                 $player->getInventory()->removeItem(ItemFactory::getInstance()->get(ItemIds::GLASS_BOTTLE, 0, 1));
             } else {
