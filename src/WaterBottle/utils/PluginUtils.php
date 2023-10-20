@@ -5,10 +5,7 @@ declare(strict_types=1);
 namespace WaterBottle\utils;
 
 use pocketmine\player\Player;
-use pocketmine\Server;
-
 use pocketmine\world\Position;
-use ReflectionClass;
 use pocketmine\network\mcpe\protocol\PlaySoundPacket;
 
 class PluginUtils {
