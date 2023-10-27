@@ -34,7 +34,6 @@ class Main extends PluginBase implements Listener {
             return;
         }
 
-        }
         if ($block->getId() === ItemIds::STILL_WATER || $block->getId() === VanillaBlocks::WATER()->getId()) {
             if($player->getInventory()->canAddItem(ItemFactory::getInstance()->get(ItemIds::POTION, 0, 1))) {
                 $item = ItemFactory::getInstance()->get(ItemIds::POTION, 0, 1);
